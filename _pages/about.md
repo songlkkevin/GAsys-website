@@ -18,13 +18,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-## Welcome to GAsys'25
+<h2 style="text-align:center; font-size: 2.5rem;">Welcome to GAsys'25</h2>
 
 The Generative AI Systems (GASys) Workshop aims to bring together researchers and practitioners from both the AI and systems communities to explore the unique challenges and opportunities presented by generative AI models. Generative AI's rapid advancement demands a full-stack approach, considering everything from algorithms and models to underlying hardware and data infrastructure. This workshop seeks to foster collaboration and discussion across disciplines, bridging the gap between academia and industry to drive innovation in this exciting field.
 
-## Important Dates
-- **Submission due**: TBD
-- **Notification to authors**: TBD
-- **Workshop date**: Mid November 2025
-
-## Sponsors

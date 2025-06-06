@@ -2,8 +2,7 @@
 layout: default
 ---
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title" style="text-align: center;">
+  <!-- <header class="post-header"><h1 class="post-title" style="text-align: center;">
       {% if site.title == 'blank' %}
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
         {{ site.last_name }}
@@ -12,69 +11,109 @@ layout: default
       {% endif %}
     </h1>
     <p class="desc" style="text-align: center;">{{ page.subtitle }}</p>
-  </header>
-
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+  </header> -->
+  <div class="row">
+    <div class="col-sm mt-3 mt-md-0" style="position: relative; display: inline-block;">
+      <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; color: white; text-shadow: 0 2px 8px #000;">
+        <p style="margin-bottom:0; font-family: 'Arial', sans-serif; font-size: 4rem;">Generative AI workshop</p>
+        <p style="margin-bottom:1rem; font-family: 'Arial', sans-serif; font-size: 2rem;">Mid November 2025, CUHK, Hong Kong</p>
       </div>
-    {% endif %}
+      {% include figure.liquid loading="eager" path="assets/img/hk.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+  </div>
 
-    <div class="clearfix">{{ content }}</div>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+  <div class="row" style="margin-top:2rem;">
+    <div class="col-md-9">
+      <article>
+        {% if page.profile %}
+          <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+            {% if page.profile.image %}
+              {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+              {% if page.profile.image_circular %}
+                {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+              {% else %}
+                {% assign profile_image_class = 'img-fluid z-depth-1
+          rounded' %}
+              {% endif %}
+              {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+          30vw, 95vw"{% endcapture %}
+              {%
+                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                cache_bust=true
+              %}
+            {% endif %}
+            {% if page.profile.more_info %}
+              <div class="more-info">{{ page.profile.more_info }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
 
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+        <div class="clearfix">{{ content }}</div>
+        <!-- News -->
+        {% if page.announcements and page.announcements.enabled %}
+          <h2 style="text-align: center;">
+            <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+          </h2>
+          {% include news.liquid limit=true %}
+        {% endif %}
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
+        <!-- Latest posts -->
+        {% if page.latest_posts and page.latest_posts.enabled %}
+          <h2>
+            <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+          </h2>
+          {% include latest_posts.liquid %}
+        {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
+        <!-- Selected papers -->
+        {% if page.selected_papers %}
+          <h2>
+            <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+          </h2>
+          {% include selected_papers.liquid %}
+        {% endif %}
 
-        <div class="contact-note">{{ site.contact_note }}</div>
+        <!-- Social -->
+        {% if page.social %}
+          <div class="social">
+            <div class="contact-icons">{% include social.liquid %}</div>
+
+            <div class="contact-note">{{ site.contact_note }}</div>
+          </div>
+        {% endif %}
+
+        {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+          {% include newsletter.liquid center=true %}
+        {% endif %}
+      </article>
+    </div>
+    <div class="col-md-3">
+      <div class="card" style="max-width: 400px; margin: 0 auto; border: 2px solid #3399FF;">
+        <div class="card-body">
+          <h3 class="card-title" style="text-align:center;">Important Dates</h3>
+          <ul style="list-style:none; padding-left:0;">
+            <li><strong>Submission due</strong>: TBD</li>
+            <li><strong>Notification to authors</strong>: TBD</li>
+            <li><strong>Workshop date</strong>: Mid November 2025</li>
+          </ul>
+        </div>
       </div>
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
-  </article>
+    </div>
+  </div>
+  <div class="row" style="margin-top:2rem;">
+    <div class="col-12">
+      <div style="text-align: center;">
+        <!--<img src="/assets/img/sponsor-logo.png" alt="Sponsor Logo" style="max-height:80px; margin-bottom:1rem;">-->
+        <h2 style="margin-top:0;">Sponsors</h2>
+      </div>
+      <!-- example -->
+      <!--
+      <div style="text-align: center;">
+        <img src="/assets/img/sponsor2.png" alt="Sponsor 2" style="max-height:60px; margin:0 1rem;">
+        <img src="/assets/img/sponsor3.png" alt="Sponsor 3" style="max-height:60px; margin:0 1rem;">
+      </div>
+      -->
+    </div>
+  </div>
 </div>
