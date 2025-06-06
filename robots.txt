@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://songlkkevin.github.io//GAsys//sitemap.xml
+Sitemap: https://songlkkevin.github.io//GAsys-website//sitemap.xml
