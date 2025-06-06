@@ -9,14 +9,28 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/GAsys-website/";
     },
-  },{id: "nav-committee",
-          title: "committee",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/GAsys-website/committee/";
-          },
-        },{id: "nav-program",
+  },{id: "dropdown-program-committee",
+              title: "program committee",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/GAsys-website/committee/program";
+              },
+            },{id: "dropdown-organizing-committee",
+              title: "organizing committee",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/GAsys-website/committee/organizing";
+              },
+            },{id: "dropdown-steering-committee",
+              title: "steering committee",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/GAsys-website/committee/steering";
+              },
+            },{id: "nav-program",
           title: "program",
           description: "",
           section: "Navigation",
