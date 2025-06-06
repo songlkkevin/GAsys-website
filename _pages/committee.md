@@ -1,10 +1,13 @@
 ---
 layout: default
 title: committee
-permalink: /committee/
 nav: true
+dropdown: true
+children:
+    - title: program committee
+      permalink: /committee/program
+    - title: organizing committee
+      permalink: /committee/organizing
+    - title: steering committee
+      permalink: /committee/steering
 ---
-
-# coming soon
-
-<!-- TODO: The layout should be profile -->
