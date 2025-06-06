@@ -23,14 +23,21 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/GAsys-website/program/";
           },
-        },{id: "nav-submissions",
-          title: "submissions",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/GAsys-website/submissions/";
-          },
-        },{id: "books-the-godfather",
+        },{id: "dropdown-papers",
+              title: "papers",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/GAsys-website/cfp/";
+              },
+            },{id: "dropdown-grand-challenges",
+              title: "grand challenges",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/GAsys-website/cfg/";
+              },
+            },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
